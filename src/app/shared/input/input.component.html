@@ -1,0 +1,9 @@
+<div class="form-group">
+  {{label}}
+  <!-- <input type="text" #ngIng="ngModel" ngModel name="nome_ingrediente" required autocomplete="off"> -->
+
+  <ng-content></ng-content>
+
+  <span class="help-block" [class.has-success]="hasSuccess()" *ngIf="ngIng.valid && (ngIng.dirty || ngIng.touched)">Ok</span>
+  <span class="help-block" [class.has-error]="hasError()" *ngIf="!ngIng.valid && (ngIng.dirty || ngIng.touched)">{{errorMessage}}</span>
+</div>

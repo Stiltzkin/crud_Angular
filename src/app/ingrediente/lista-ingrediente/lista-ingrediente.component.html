@@ -1,0 +1,25 @@
+<div class="container col-sm-12">
+  <!-- <p [(ngModel)]="listaIngredienteService.selectedIngrediente.id_ingrediente"></p>
+  <p [(ngModel)]="listaIngredienteService.selectedIngrediente.nome_ingrediente"></p> -->
+
+  <h2>Lista de Ingredientes</h2>
+  <button routerLink="/cria-ingrediente">Criar Ingrediente</button>
+  <table class="table">
+    <tr>
+      <th>Ingrediente</th>
+      <th>Quantidade Calorica</th>
+      <th>Unidade de Medida</th>
+    </tr>
+    <tr *ngFor="let ingrediente of ingredientes?.data">
+      <td>{{ingrediente.nome_ingrediente}}</td>
+      <td>{{ingrediente.quantidade_calorica_ingrediente}}</td>
+      <td>{{ingrediente.id_unidade_medida}}</td>
+      <td>
+        <button routerLink="/cria-ingrediente" (click)="showForEdit(ingrediente)">Editar</button>
+      </td>
+      <td>
+        <button (click)="onDelete(ingrediente)">Excluir</button>
+      </td>
+    </tr>
+  </table>
+</div>

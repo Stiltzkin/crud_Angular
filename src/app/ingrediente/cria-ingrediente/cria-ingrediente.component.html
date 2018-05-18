@@ -1,0 +1,25 @@
+<div class="content col-sm-12">
+
+  <!-- {{form.value | json}} -->
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <input type="hidden" ngModel name="id_ingrediente" [(ngModel)]="ing.id_ingrediente" autocomplete="off">
+    <app-input errorMessage="Campo Obrigatorio!" label="Ingrediente">
+      <input type="text" ngModel name="nome_ingrediente" [(ngModel)]="ing.nome_ingrediente" required autocomplete="off" placeholder="nome">
+    </app-input>
+
+    <app-input errorMessage="Campo Obrigatorio!!!" label="Unidade de Medida">
+      <input required ngModel type="number" name="id_unidade_medida" [(ngModel)]="ing.id_unidade_medida" placeholder="unidade">
+    </app-input>
+
+    <app-input errorMessage="Campo Obrigatorio!!!" label="Quantidade Calorica">
+      <input type="number" ngModel name="quantidade_calorica_ingrediente" required [(ngModel)]="ing.quantidade_calorica_ingrediente"
+        placeholder="caloria">
+    </app-input>
+
+    <app-input errorMessage="Campo Obrigatorio!!!" label="Aproveitamento">
+      <input type="number" ngModel name="aproveitamento_ingrediente" required [(ngModel)]="ing.aproveitamento_ingrediente" placeholder="aproveitamento">
+    </app-input>
+    <button>Salvar</button>
+  </form>
+</div>
